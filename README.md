@@ -1,6 +1,6 @@
 # Makeup by Mel - Website
 
-A beautiful, modern React website for a professional makeup artist in Phoenix, Arizona.
+A professional makeup artist portfolio website for Melanie, based in Phoenix, Arizona.
 
 ## Features
 
