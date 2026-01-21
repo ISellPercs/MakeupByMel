@@ -1,0 +1,213 @@
+.services {
+  padding: var(--section-padding) 0;
+  background: var(--nude-lightest);
+  position: relative;
+  overflow: hidden;
+}
+
+.services-bg-accent {
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--gold-light) 0%, transparent 70%);
+  opacity: 0.2;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.services-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.services-intro {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--charcoal);
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* Service Card */
+.service-card {
+  background: var(--white);
+  padding: 40px;
+  position: relative;
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-color: var(--gold-light);
+}
+
+.service-card.popular {
+  border: 2px solid var(--gold-base);
+}
+
+.service-card.popular::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold-base), var(--gold-light));
+}
+
+.popular-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--gold-base);
+  color: var(--white);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--black-soft);
+  margin-bottom: 15px;
+}
+
+.service-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold-rich);
+  font-weight: 500;
+}
+
+.price-note {
+  font-size: 0.75rem;
+  color: var(--gray-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.service-description {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--charcoal);
+  margin-bottom: 25px;
+}
+
+.service-features {
+  margin-bottom: 30px;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--black-soft);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--nude-light);
+}
+
+.service-features li:last-child {
+  border-bottom: none;
+}
+
+.feature-icon {
+  color: var(--gold-base);
+  font-size: 0.7rem;
+}
+
+.service-cta {
+  display: block;
+  text-align: center;
+  padding: 14px 30px;
+  background: var(--black-soft);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+}
+
+.service-cta:hover {
+  background: var(--gold-rich);
+}
+
+.service-card.popular .service-cta {
+  background: var(--gold-base);
+}
+
+.service-card.popular .service-cta:hover {
+  background: var(--gold-dark);
+}
+
+/* Services Note */
+.services-note {
+  text-align: center;
+  margin-top: 50px;
+  padding: 25px 40px;
+  background: var(--white);
+  border-left: 3px solid var(--gold-base);
+}
+
+.services-note p {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  margin: 0;
+}
+
+.services-note a {
+  color: var(--gold-rich);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.services-note a:hover {
+  color: var(--gold-dark);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    padding: 30px 25px;
+  }
+
+  .popular-badge {
+    position: static;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  .services-note {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Nude Palette - Primary */
+  --nude-lightest: #FAF7F5;
+  --nude-light: #F5EBE6;
+  --nude-base: #E8D5C8;
+  --nude-medium: #D4B8A5;
+  --nude-dark: #C9A68F;
+  
+  /* Black - Secondary */
+  --black-pure: #000000;
+  --black-soft: #1A1A1A;
+  --black-medium: #2D2D2D;
+  --charcoal: #3D3D3D;
+  
+  /* Gold - Accent */
+  --gold-light: #E8D5A3;
+  --gold-base: #C9A962;
+  --gold-rich: #B8963F;
+  --gold-dark: #96782E;
+  
+  /* Neutrals */
+  --white: #FFFFFF;
+  --gray-light: #F8F8F8;
+  --gray-medium: #9A9A9A;
+  
+  /* Typography */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Montserrat', sans-serif;
+  
+  /* Spacing */
+  --section-padding: 100px;
+  --container-width: 1200px;
+  
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--nude-lightest);
+  color: var(--black-soft);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, textarea {
+  font-family: var(--font-body);
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nude-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-base);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+/* Selection */
+::selection {
+  background: var(--gold-light);
+  color: var(--black-soft);
+}
+
+/* Utility Classes */
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--black-soft);
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.section-subtitle {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--gold-base);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-base), transparent);
+  margin: 1.5rem auto 2rem;
+}
+
+/* Button Styles */
+.btn-primary {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--black-soft);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--gold-base), transparent);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  background: var(--gold-rich);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 14px 38px;
+  background: transparent;
+  color: var(--black-soft);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-base);
+  transition: var(--transition-smooth);
+}
+
+.btn-outline:hover {
+  background: var(--gold-base);
+  color: var(--white);
+}
+
+/* Mobile Responsive Base */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px;
+  }
+  
+  html {
+    font-size: 14px;
+  }
+}
